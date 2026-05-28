@@ -240,15 +240,17 @@
   // ── LAYOUT PROJECTS ───────────────────────────────────────────────
   // Nav is CSS-positioned (position:fixed; bottom:0) — no JS needed.
   function layoutNav() {
-    // Projects: centered at 45% height (slightly above center)
     const isMobile = window.innerWidth <= 768;
     const itemH = isMobile ? 32 : CELL;
     const itemCount = projectsEl.querySelectorAll('li').length;
     const listH = itemCount * itemH;
     const navH = 32;
-    const availH = window.innerHeight - navH;
-    const rawTop = Math.min(availH * 0.45 - listH / 2, availH - listH - 16);
-    const snappedTop = Math.max(16, Math.round(rawTop / itemH) * itemH);
+    // Use visualViewport height if available (accounts for mobile browser chrome)
+    const viewH = (window.visualViewport ? window.visualViewport.height : window.innerHeight);
+    const availH = viewH - navH;
+    // Centre the list in available space, clamped so it never overflows
+    const idealTop = Math.round((availH - listH) / 2);
+    const snappedTop = Math.max(8, idealTop);
     projectsEl.style.top = snappedTop + 'px';
 
     // The container uses text-align:center — CSS centers the <a> by pixel width.
@@ -342,6 +344,13 @@
       layoutNav();
     }, 150);
   });
+  // Re-layout when mobile browser chrome shows/hides
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { layoutNav(); }, 100);
+    });
+  }
 
   // ── PROJECT LINK SCRAMBLE ─────────────────────────────────────────
   // Uses .display inner span so the outer span[data-char] stays as the
