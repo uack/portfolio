@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Approach to AI — Alex Simon</title>
+  <link rel="stylesheet" href="system.css">
+  <style>
+    html, body { position: relative; }
+    /* ai-approach hero has no meta block — extra bottom padding to breathe */
+    .hero { padding-bottom: 80px; }
+    section:not(.full):not(.wide) { background: transparent; }
+  </style>
+</head>
+<body>
+
+<pre id="wind-global" aria-hidden="true" role="presentation"></pre>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-label"><span class="hero-text-bg">Method</span></p>
+      <h1><span class="hero-text-bg scramble">My Approach to AI</span></h1>
+    </div>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <section class="full">
+    <div style="max-width:720px;margin:0 auto;padding:0 48px;box-sizing:border-box;">
+      <img src="img-ai-enablement-claude-session.png" alt="Claude Code session — 12-agent parallel audit in progress, role assignments and dispatch order visible" style="width:100%;display:block;">
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section>
+    <p><span class="hero-text-bg">Most designers using AI in 2026 are moving fast. The failure mode isn't slowness. It's confident wrongness — a tool that produces plausible output while being wrong in ways that are hard to catch.</span></p>
+
+    <p><span class="hero-text-bg">The method has two layers. The first is a wiki: every project, every decision, every source — logged, cross-referenced, filed. Only ingest, never invent. It holds the context that gets lost six months later, when the original reasoning is gone.</span></p>
+
+    <p><span class="hero-text-bg">The second is critique. Before anything ships, I run the work through twelve models in parallel. Each gets the relevant wiki context first. Each has a different role: one checks substance and logic, one flags tone, one cuts redundancy, one checks sentence mechanics. When two different model families flag the same issue, I fix it. When only one flags it, I decide. No model generates anything.</span></p>
+
+    <p><span class="hero-text-bg">I built this for design work, then deliberately tested it on completely different problems — a skincare app I coded, reorganising my wardrobe, planning my kitchen layout. Not because those problems needed this level of rigour, but because I wanted to know if the method held when the stakes were low and the domain was unfamiliar. It does.</span></p>
+
+    <div class="callout">
+      <p><span class="hero-text-bg">The rigour isn't about distrust. It's about earning the right to move fast.</span></p>
+    </div>
+
+    <a href="ai-enablement.html" class="inline-link"><span class="hero-text-bg">See it in practice: AI Enablement case →</span></a>
+  </section>
+
+</div><!-- /page -->
+
+<footer>
+  <p>My Approach to AI · Alex Simon</p>
+  <a href="index.html">← All work</a>
+</footer>
+
+<script src="wind.js"></script>
+<script>
+window.initCasePage({
+  heroBasePadding: 80,
+  wind: {
+    chars:     [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','.','.',':','-','~','+'],
+    threshold: 0.12,
+    speed:     0.006
+  }
+});
+</script>
+
+</body>
+</html>

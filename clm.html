@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Lifecycle Management — Alex Simon</title>
+  <link rel="stylesheet" href="system.css">
+  <style>
+    html, body { position: relative; }
+    section:not(.full):not(.wide) { background: transparent; }
+
+    /* clm-specific: full-image constrained to column with padding */
+    .full-image {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 48px;
+      box-sizing: border-box;
+    }
+
+    .full-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .full-image { padding: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<pre id="wind-global" aria-hidden="true" role="presentation"></pre>
+
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-label"><span class="hero-text-bg">Zalando · 2022–2025</span></p>
+      <h1><span class="hero-text-bg scramble">Customer Lifecycle Management</span></h1>
+      <p class="lead"><span class="hero-text-bg">CRM at Zalando had always been a commercial topic. Product, marketing, business development, each optimising their own number. I was the first designer to sit inside the programme. The business metrics were hiding a category nobody had been tracking: the customers Zalando was failing silently.</span></p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label"><span class="hero-text-bg">Role</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">Initiative Product Design Lead</span></span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label"><span class="hero-text-bg">Type of work</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">Product definition · Systems · CRM logic</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="full">
+    <div class="full-image">
+      <img src="clm-ambition.png" alt="CLM — user intent over time: not every action results in a purchase, but leads to another interaction">
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">The problem</span></h2>
+    <h3><span class="hero-text-bg scramble">Six functions, one customer, no shared direction</span></h3>
+    <p><span class="hero-text-bg">CRM at Zalando touched hundreds of millions of customer interactions a year: 277M restock requests, 6M daily cart visits, push and email across dozens of markets. Six functions owned a slice of it: Product, Engineering, Business Development, Marketing, Data Science, Legal, each measured by their own metric. Nobody held the full picture of what the experience felt like end to end.</span></p>
+    <p><span class="hero-text-bg">The brief was to increase CLV. No workstreams defined, no scope, no features. I was the only designer on the programme for two and a half years. Working with a business developer who owned forecasts and commercial logic, I identified what to build, shaped each brief, and delivered it. Notify Me, Communication Preferences, I&amp;E Notifications: a few of the workstreams we proposed and shipped.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">The work</span></h2>
+    <h3><span class="hero-text-bg scramble">Notify Me, then the harder question</span></h3>
+    <p><span class="hero-text-bg">Notify Me was the first feature giving customers direct control at the item level: alerts when an out-of-stock item becomes available. Push was already a fragile channel, opt-out rates rising, and the customers most resistant to marketing were exactly the audience this feature needed to reach.</span></p>
+    <p><span class="hero-text-bg">Three hard constraints: inconsistent legacy UX across devices, misaligned incentives across Business Development, Markets, and CRM, and a strict technical integration with Braze. I co-owned the product definition with a business developer and built the mockups that forced a decision. The PRFAQ was signed off in one review round. First experiment live December 2024. Reminder creation rate up 17.5%.</span></p>
+    <p><span class="hero-text-bg">With M1 proven, M2 asked a harder question: what happened to the customers whose items never came back in stock?</span></p>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">Ghosting</span></h2>
+    <h3><span class="hero-text-bg scramble">45–53% of requests, no reply</span></h3>
+    <p><span class="hero-text-bg">45 to 53% of restock requests went unanswered for 14 to 90 days. 15% of items were ever restocked at all. These were customers who had raised their hand. Zalando said nothing back. I named it ghosting and designed the response. The idea was straightforward: when an item couldn't be restocked, suggest alternatives. The design problem was the logic inside it. Which signals indicate the customer still cares? When is the right moment to send? Which products qualify: not just similar items, but the right size, added to the site after the customer set the alert, matching the original intent rather than filling a slot. The logic of what to send, when, and why was mine.</span></p>
+    <p><span class="hero-text-bg">Alongside it: tiered notification logic that prioritised Plus Superstars and CLM segments (0 to 1st order, 1st to 2nd order), so the highest-value customers got notified first on limited restocks.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">The result</span></h2>
+    <h3><span class="hero-text-bg scramble">A thesis proven in revenue</span></h3>
+    <p><span class="hero-text-bg">Two years of data confirmed it. Relevant messages outperform volume on orders, on revenue, on retention. The customers Zalando had been failing silently were now being answered, and converting. I took that finding to the CRM director. That became Project Goldfish: a new CRM strategy in development, designed to reach 5.3M users across 10 markets.</span></p>
+    <p><span class="hero-text-bg">Notify Me and Ghost-prevention are two workstreams from a programme that ran across many more. Interest Collection, which asked customers what they cared about and surfaced related collections, drove engagement gains with the same logic.</span></p>
+
+    <div class="callout">
+      <p><span class="hero-text-bg">Total programme impact: &gt;€15M GMV. Notify Me M2 alone grew revenue +€9.9M year on year. Ghost-prevention recovered €3.7M from previously silent requests.</span></p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-number">&gt;€15M</span>
+        <span class="stat-label">GMV — total programme impact</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">277M · +17.5%</span>
+        <span class="stat-label">Restock requests · reminder creation rate</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">+8.2%</span>
+        <span class="stat-label">Orders — Notify Me M2</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="full">
+    <div class="full-image">
+      <img src="clm-flow.png" alt="CLM initiative — Notify Me service flow across states, segments, and platform variants">
+    </div>
+  </section>
+
+</div>
+
+<nav class="case-nav-boxes">
+  <a href="occam.html" class="case-nav-box">
+    <span class="case-nav-box-label">Next case</span>
+    <span class="case-nav-box-title">Occam →</span>
+    <span class="case-nav-box-desc">Five teams, no shared vision, one designer who decided to fix it.</span>
+  </a>
+  <a href="alex-simon.html" class="case-nav-box">
+    <span class="case-nav-box-label">Go deeper</span>
+    <span class="case-nav-box-title">alex-simon.md</span>
+    <span class="case-nav-box-desc">Drop this file into any AI and ask whatever you'd ask in an interview.</span>
+  </a>
+</nav>
+
+<footer>
+  <p>Customer Lifecycle Management · Alex Simon</p>
+  <a href="index.html">← All work</a>
+</footer>
+
+<script src="password.js"></script>
+<script src="wind.js"></script>
+<script>
+window.initCasePage({
+  wind: {
+    chars:     [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','.', ':', '-', '~', '+'],
+    threshold: 0.15,
+    speed:     0.006
+  }
+});
+</script>
+
+</body>
+</html>

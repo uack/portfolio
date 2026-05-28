@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Enablement — Alex Simon</title>
+  <link rel="stylesheet" href="system.css">
+  <style>
+    html, body { position: relative; }
+    section:not(.full):not(.wide) { background: transparent; }
+  </style>
+</head>
+<body>
+
+<pre id="wind-global" aria-hidden="true"></pre>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-label"><span class="hero-text-bg">Zalando · 2025–2026</span></p>
+      <h1><span class="hero-text-bg scramble">AI ENABLEMENT</span></h1>
+      <p class="lead"><span class="hero-text-bg">150+ designers using unauthorised tools, real GDPR exposure, no shared standards. The mandate came from the work itself; see <a href="occam.html" style="color:inherit;font-weight:500;">Occam</a>. I designed the strategy and infrastructure to fix it, then validated the model by shipping a production feature myself: design to live in half a day.</span></p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label"><span class="hero-text-bg">Role</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">Programme Creator and Lead</span></span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label"><span class="hero-text-bg">Type of work</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">Strategy · Infrastructure · Practice</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <section class="full">
+    <div style="max-width:720px;margin:0 auto;padding:0 48px;box-sizing:border-box;">
+      <img src="img-ai-enablement-design-in-code.jpg" alt="Design-in-code session — designers working directly in the production codebase" style="width:100%;display:block;">
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section>
+    <h2><span class="hero-text-bg scramble">The problem</span></h2>
+    <h3><span class="hero-text-bg scramble">81% of the org, no approved path</span></h3>
+    <p><span class="hero-text-bg">81% of Zalando's designers were using AI tools on personal accounts, without org approval, pasting company data in without oversight. The real risk wasn't the tools. It was siloed knowledge, GDPR exposure, and an org building bad habits at scale.</span></p>
+    <p><span class="hero-text-bg">The tools also failed on anything that mattered. Zalando had a proprietary design system, a React codebase, GDPR constraints, SSR requirements. A previous pilot tool withdrew from the integration entirely: "too advanced for their v1." A 90-person survey confirmed what the interviews showed: designers used AI to move faster, but without Zalando-specific standards, those shortcuts created rework.</span></p>
+    <p><span class="hero-text-bg">The response was Safe Harbor: approved tools, a shared environment, a deliberate push toward collective practice rather than enforced compliance. CPO-level backing from Timm Kekeritz, Gerrit Kaiser, and Marcia Arff, secured through early results. Engineering leadership flagged the pilot tool as unapproved the week before launch. Proposed a one-day time-boxed pilot instead of permanent approval. Proceeded.</span></p>
+  </section>
+
+  <!-- PROGRAMME -->
+  <section>
+    <h2><span class="hero-text-bg scramble">Programme</span></h2>
+    <h3><span class="hero-text-bg scramble">Four tracks built as a system</span></h3>
+    <p><span class="hero-text-bg">Infrastructure first, then practice. Each track addressed a different layer of the capability gap, from the design system itself to how designers and engineers work together in the codebase.</span></p>
+
+    <div class="workstream-grid">
+      <div class="workstream">
+        <p class="workstream-number">Track 0</p>
+        <h4><span class="hero-text-bg scramble">AI-ready design system</span></h4>
+        <p>ZDS connected via MCP. Any AI tool now generates components using Zalando tokens, brand rules, and accessibility standards. The foundation every other track depends on.</p>
+      </div>
+      <div class="workstream">
+        <p class="workstream-number">Track 1</p>
+        <h4><span class="hero-text-bg scramble">Shared practice</span></h4>
+        <p>Monthly AI Jams with live briefs and real product constraints, not sandbox exercises. First session: 15 participants, 4 facilitators. Format designed so learning happens in the open, not in silos.</p>
+      </div>
+      <div class="workstream">
+        <p class="workstream-number">Track 2</p>
+        <h4><span class="hero-text-bg scramble">File quality</span></h4>
+        <p>Figma files readable by humans, engineers, and AI. zSpecs plugin: 168K issues detected, 4,836 fixed, 23 active users.</p>
+      </div>
+      <div class="workstream">
+        <p class="workstream-number">Track 3</p>
+        <h4><span class="hero-text-bg scramble">Design in code</span></h4>
+        <p>Designers working directly in the production codebase. No handoffs, no tickets, no translation step. The feedback cycle went from days to minutes.</p>
+      </div>
+    </div>
+
+    <h2><span class="hero-text-bg scramble">Proof</span></h2>
+    <h3><span class="hero-text-bg scramble">Five teams, one day, production code</span></h3>
+    <p><span class="hero-text-bg">The model needed a proof of concept, not a deck. Five teams worked simultaneously: designer brings the intent, engineer brings the codebase, AI assists. I ran one pilot myself: a new PDP feature from design to code to live in half a day. I needed to know exactly what I was asking teams to do.</span></p>
+    <p><span class="hero-text-bg">A designer with no coding background pushed a real PR. Another team built a new PDP-to-Zalando-Assistant feature entirely in code.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">The result</span></h2>
+    <h3><span class="hero-text-bg scramble">From isolated experiments to a working practice</span></h3>
+    <p><span class="hero-text-bg">Isolated experimentation became a shared discipline. An active working group now discusses approaches, shares setups, and builds on each other's work: dic-hub GitHub repo, bi-weekly cadence, pilot templates that any team can pick up. 8+ teams are running their own pilots. One team that adopted the model cut their delivery sprint from 4 weeks to 1 week.</span></p>
+    <p><span class="hero-text-bg">Designed the strategy, secured the stakeholders, built the four tracks, ran the pairing day, established the community infrastructure.</span></p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-number">150+</span>
+        <span class="stat-label">Designers reached</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Designers in the active working group</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">8+</span>
+        <span class="stat-label">Teams running their own pilots</span>
+      </div>
+    </div>
+
+    <p><span class="hero-text-bg"><a href="ai-approach.html" style="color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px;">How I use AI in my work →</a></span></p>
+  </section>
+
+  <section class="full">
+    <div style="max-width:720px;margin:0 auto;padding:0 48px;box-sizing:border-box;">
+      <img src="img-ai-enablement-zds-repo.png" alt="ZDS Core — Figma Make template repository connecting Zalando design system to AI tools" style="width:100%;display:block;">
+    </div>
+  </section>
+
+  <section class="full">
+    <div style="max-width:720px;margin:0 auto;padding:0 48px;box-sizing:border-box;">
+      <img src="img-ai-enablement-pr.png" alt="GitHub PR #23863 — Feature/pdp mweb grid tabs, Alex Simon" style="width:100%;display:block;">
+    </div>
+  </section>
+
+</div><!-- /page -->
+
+<nav class="case-nav-boxes">
+  <a href="ferrari.html" class="case-nav-box">
+    <span class="case-nav-box-label">Next case</span>
+    <span class="case-nav-box-title">Ferrari Connesso →</span>
+    <span class="case-nav-box-desc">83 features written by engineers. No UX process, no trust. Starting from zero.</span>
+  </a>
+  <a href="alex-simon.html" class="case-nav-box">
+    <span class="case-nav-box-label">Go deeper</span>
+    <span class="case-nav-box-title">alex-simon.md</span>
+    <span class="case-nav-box-desc">Drop this file into any AI and ask whatever you'd ask in an interview.</span>
+  </a>
+</nav>
+
+<footer>
+  <p>AI Enablement · Alex Simon</p>
+  <a href="index.html">← All work</a>
+</footer>
+
+<script src="password.js"></script>
+<script src="wind.js"></script>
+<script>
+window.initCasePage({
+  wind: {
+    chars:     [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','.','.',':','-','~','+'],
+    threshold: 0.12,
+    speed:     0.006
+  }
+});
+</script>
+
+</body>
+</html>

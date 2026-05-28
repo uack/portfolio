@@ -1,0 +1,589 @@
+/*
+ * system.css — Portfolio Design System
+ * Source of truth for all shared visual styles.
+ * Reference: ai-enablement-v3.html
+ *
+ * PAGE-SPECIFIC overrides stay inline in each HTML file:
+ *   - index-v3: body overflow:hidden, height:100%, #grid/#nav/#projects
+ *   - case studies: hero/image section specifics, wind pre element
+ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── TOKENS ──────────────────────────────────────────────────────── */
+:root {
+  --bg:    #f5f0e8;
+  --field: #c8bfae;
+  --mid:   #8a8070;
+  --text:  #2a2520;
+}
+
+/* ── BASE ────────────────────────────────────────────────────────── */
+html, body {
+  width: 100%;
+  background: var(--bg);
+}
+
+body {
+  font-family: "SF Mono","Fira Mono","Consolas","Menlo",monospace;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: var(--mid);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TYPOGRAPHY ──────────────────────────────────────────────────── */
+h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+p {
+  color: var(--mid);
+  margin-bottom: 16px;
+  line-height: 16px;
+}
+
+p:last-child { margin-bottom: 0; }
+
+/* ── LINKS ───────────────────────────────────────────────────────── */
+a { color: var(--text); text-decoration: none; }
+a:hover { color: var(--mid); }
+
+.inline-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+/* ── WIND TEXT MASKING ───────────────────────────────────────────── */
+/* Per-glyph background — lets wind show through margins between letters */
+.hero-text-bg {
+  display: inline;
+  background: var(--bg);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0;
+}
+
+/* Scramble splits .hero-text-bg into per-char spans — carry bg through */
+.scramble > span {
+  background: var(--bg);
+}
+
+/* ── LAYOUT ──────────────────────────────────────────────────────── */
+/* Case study sections */
+section:not(.full):not(.wide) {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+  background: transparent;
+  padding-block: 48px;
+}
+
+section.wide {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-block: 80px;
+}
+
+section.full {
+  padding: 0;
+  max-width: none;
+  width: 100%;
+}
+
+/* ── HERO (case pages) ───────────────────────────────────────────── */
+.hero {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 52px;
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+}
+
+.hero-inner > * {
+  display: block;
+  margin-left: var(--snap-pad, 48px);
+  margin-right: var(--snap-pad, 48px);
+  background: transparent;
+  line-height: 16px;
+}
+
+.hero-inner > .hero-meta {
+  display: flex;
+  margin-left: var(--snap-pad, 48px);
+  margin-right: var(--snap-pad, 48px);
+  background: transparent;
+}
+
+.hero-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  margin-bottom: 0;
+}
+
+.hero h1 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.lead {
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 16px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 32px;
+  padding-top: 32px;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero-meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mid);
+}
+
+.hero-meta-value {
+  font-weight: 600;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .hero { padding-left: 24px; padding-right: 24px; }
+  .hero-meta { flex-direction: column; gap: 16px; }
+}
+
+/* ── WIND PRE (case pages) ───────────────────────────────────────── */
+#wind-global {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  color: var(--field);
+  font-family: "SF Mono","Fira Mono","Consolas","Menlo",monospace;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0;
+  white-space: pre;
+  overflow: hidden;
+  margin: 0; padding: 0;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  padding: 0 0 80px;
+  background: transparent;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────────── */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: var(--bg);
+  border-top: 1px solid var(--mid);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  font-size: 13px;
+}
+
+footer p { color: var(--mid); margin: 0; }
+footer a { color: var(--mid); text-decoration: none; }
+footer a:hover { color: var(--text); }
+
+/* ── CASE NAVIGATION ─────────────────────────────────────────────── */
+/* Sits above wind layer */
+.case-nav {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 48px 80px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.case-nav-next {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.case-nav-next:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.case-nav-sep {
+  flex: 1 1 auto;
+  position: relative;
+  height: 16px;
+  min-width: 32px;
+}
+
+.case-nav-sep::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: 7px;
+  border-top: 1px solid var(--mid);
+  opacity: 0.4;
+}
+
+.case-nav-sep::after {
+  content: "//";
+  position: absolute;
+  right: 8px;
+  top: 0;
+  padding: 0 4px;
+  color: var(--mid);
+  background: var(--bg);
+  opacity: 0.7;
+}
+
+.case-nav-agent {
+  color: var(--mid);
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.case-nav-agent:hover { color: var(--text); }
+
+.case-nav-file {
+  padding: 0 5px;
+  background: var(--field);
+  border: 1px solid var(--mid);
+  color: var(--text);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.case-nav-agent:hover .case-nav-file {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.case-nav-cursor {
+  color: var(--mid);
+  animation: blink 1s step-end infinite;
+}
+
+.case-nav-agent:hover .case-nav-file .case-nav-cursor {
+  color: var(--bg);
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 760px) {
+  .case-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 32px 24px 72px;
+  }
+  .case-nav-sep { display: none; }
+}
+
+/* ── CALLOUT ─────────────────────────────────────────────────────── */
+.callout {
+  border-left: 2px solid var(--mid);
+  padding-left: 2ch;
+  color: var(--text);
+  margin: 32px 0;
+}
+
+.callout p {
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── BLOCKQUOTE ──────────────────────────────────────────────────── */
+blockquote {
+  border-left: 1px dashed var(--mid);
+  padding-left: 2ch;
+  margin: 32px 0;
+}
+
+blockquote p {
+  color: var(--text);
+  font-style: normal;
+  margin: 0;
+}
+
+/* ── STAT ROW ────────────────────────────────────────────────────── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--mid);
+  outline: 1px solid var(--mid);
+  margin: 32px 0;
+}
+
+.stat {
+  background: var(--bg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stat-number {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.stat-label { color: var(--mid); }
+
+/* ── IMAGE PAIR ──────────────────────────────────────────────────── */
+.image-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--mid);
+  outline: 1px solid var(--mid);
+  margin: 0;
+}
+
+.image-pair img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .image-pair { grid-template-columns: 1fr; }
+}
+
+/* ── WORKSTREAM GRID ─────────────────────────────────────────────── */
+.workstream-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--mid);
+  outline: 1px solid var(--mid);
+  margin: 32px 0;
+}
+
+.workstream {
+  background: var(--bg);
+  padding: 32px;
+}
+
+.workstream-number {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mid);
+  margin-bottom: 16px;
+}
+
+/* ── IMAGE PLACEHOLDER ───────────────────────────────────────────── */
+.image-placeholder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border: 1px solid var(--mid);
+  color: var(--mid);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  aspect-ratio: 16/9;
+}
+
+.image-placeholder.tall { aspect-ratio: 4/3; }
+
+/* ── TWO COL ─────────────────────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── REDUCED MOTION ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  /* Pages should pause wind animation when this fires.
+     JS checks this via window.matchMedia('(prefers-reduced-motion: reduce)') */
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  section:not(.full):not(.wide) { padding-left: 24px; padding-right: 24px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .workstream-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; gap: 32px; }
+  footer { padding: 0 16px; }
+}
+
+/* ── PASSWORD OVERLAY ────────────────────────────────────────────── */
+#pw-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "SF Mono","Fira Mono","Consolas","Menlo",monospace;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+#pw-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  cursor: text;
+}
+
+#pw-label {
+  color: var(--mid);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+}
+
+#pw-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--mid);
+  outline: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  width: 200px;
+  padding: 4px 0;
+  caret-color: var(--text);
+}
+
+#pw-input:focus {
+  border-bottom-color: var(--text);
+}
+
+#pw-error {
+  color: var(--mid);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  min-height: 16px;
+}
+
+/* ── CASE NAVIGATION BOXES ───────────────────────────────────────── */
+.case-nav-boxes {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 48px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.case-nav-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--field);
+  padding: 24px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.case-nav-box:hover { border-color: var(--mid); }
+
+.case-nav-box-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mid);
+  margin-bottom: 12px;
+}
+
+.case-nav-box-title {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.case-nav-box-desc {
+  color: var(--mid);
+  line-height: 16px;
+}
+
+@media (max-width: 600px) {
+  .case-nav-boxes {
+    grid-template-columns: 1fr;
+    padding: 32px 24px 72px;
+  }
+}

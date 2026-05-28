@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Simon — Principal Product Designer</title>
+  <link rel="stylesheet" href="system.css">
+  <style>
+    html, body { position: relative; }
+    section:not(.full):not(.wide) { background: transparent; }
+
+    .timeline-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .timeline-table tr {
+      border-top: 1px solid var(--field);
+    }
+
+    .timeline-table tr:last-child {
+      border-bottom: 1px solid var(--field);
+    }
+
+    .timeline-table td {
+      padding: 12px 0;
+      vertical-align: top;
+      color: var(--mid);
+    }
+
+    .timeline-table td:first-child {
+      width: 120px;
+      white-space: nowrap;
+      color: var(--mid);
+      padding-right: 24px;
+    }
+
+    .timeline-table td:nth-child(2) {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .timeline-table td:last-child {
+      padding-left: 24px;
+      text-align: right;
+    }
+
+    .proof-block {
+      border-left: 1px solid var(--field);
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+
+    .proof-block p {
+      color: var(--mid);
+      margin-bottom: 4px;
+    }
+
+    .proof-block .proof-attr {
+      color: var(--field);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+    }
+
+    .download-block {
+      border: 1px solid var(--field);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .download-block p {
+      margin-bottom: 0;
+    }
+
+    .download-btn {
+      display: inline-block;
+      border: 1px solid var(--text);
+      color: var(--text);
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 11px;
+      align-self: flex-start;
+    }
+
+    .download-btn:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .download-btn.secondary {
+      border-color: var(--field);
+      color: var(--mid);
+    }
+
+    .download-btn.secondary:hover {
+      background: var(--mid);
+      color: var(--bg);
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .md-steps {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .md-steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    .md-steps li::before {
+      content: counter(steps);
+      color: var(--field);
+      min-width: 16px;
+      flex-shrink: 0;
+    }
+
+    .md-steps li span {
+      color: var(--mid);
+    }
+
+    .md-steps li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<pre id="wind-global" aria-hidden="true" role="presentation"></pre>
+
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-label"><span class="hero-text-bg">Principal Product Designer · Berlin</span></p>
+      <h1><span class="hero-text-bg scramble">Alex Simon</span></h1>
+      <p class="lead"><span class="hero-text-bg">14 years. Agency then in-house. Left AKQA to apply agency thinking at product scale. The pattern: find the structural problem no one has formally named, build the case, ship it.</span></p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label"><span class="hero-text-bg">Currently</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">Zalando, The Studio</span></span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label"><span class="hero-text-bg">Based</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">Berlin</span></span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label"><span class="hero-text-bg">Contact</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg"><a href="mailto:uack.uack@gmail.com" style="color:inherit;">uack.uack@gmail.com</a></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">Timeline</span></h2>
+    <table class="timeline-table">
+      <tr>
+        <td><span class="hero-text-bg">2024 – now</span></td>
+        <td><span class="hero-text-bg">Principal Product Designer, The Studio</span></td>
+        <td><span class="hero-text-bg">Zalando, Berlin</span></td>
+      </tr>
+      <tr>
+        <td><span class="hero-text-bg">2021 – 2024</span></td>
+        <td><span class="hero-text-bg">Senior Product Designer, The Studio</span></td>
+        <td><span class="hero-text-bg">Zalando, Berlin</span></td>
+      </tr>
+      <tr>
+        <td><span class="hero-text-bg">2019 – 2021</span></td>
+        <td><span class="hero-text-bg">Associate Experience Design Director</span></td>
+        <td><span class="hero-text-bg">AKQA, Milan</span></td>
+      </tr>
+      <tr>
+        <td><span class="hero-text-bg">2016 – 2019</span></td>
+        <td><span class="hero-text-bg">Digital Product Design Director</span></td>
+        <td><span class="hero-text-bg">HNRG, Padua</span></td>
+      </tr>
+      <tr>
+        <td><span class="hero-text-bg">2014 – 2016</span></td>
+        <td><span class="hero-text-bg">Senior UX Designer</span></td>
+        <td><span class="hero-text-bg">Swiss Digital Consulting, Chiasso</span></td>
+      </tr>
+      <tr>
+        <td><span class="hero-text-bg">2012 – 2014</span></td>
+        <td><span class="hero-text-bg">UX Designer</span></td>
+        <td><span class="hero-text-bg">Mediana, Padua</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">What others say</span></h2>
+
+    <div class="proof-block">
+      <p><span class="hero-text-bg">"A rare and valuable balance of high-fidelity visual craft and deep experiential thinking."</span></p>
+      <p class="proof-attr"><span class="hero-text-bg">Marcia Arff · Design Director · Zalando 360° review</span></p>
+    </div>
+
+    <div class="proof-block">
+      <p><span class="hero-text-bg">"Hands-on designer-builder-leader whose craft and skills in AI-powered product design make the whole design team and organization more pragmatic and effective."</span></p>
+      <p class="proof-attr"><span class="hero-text-bg">Jarno Koponen · Senior Principal, Zalando Assistant · Zalando 360° review</span></p>
+    </div>
+
+    <div class="proof-block">
+      <p><span class="hero-text-bg">"He's not just the designer coming later into the product development process but he also helps to define and frame customer problems, comes up with experience and design solutions, and shapes the scope and the go-to-market strategy."</span></p>
+      <p class="proof-attr"><span class="hero-text-bg">Christoph Lütke Schelhowe · VP CLM · Zalando 360° review</span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">What I'm looking for</span></h2>
+    <p><span class="hero-text-bg">Roles where identifying the structural problem no one has named yet is valued, not unusual. Where thinking across brand, product, and AI simultaneously is the actual job. Two specific conversations in Berlin, both warm.</span></p>
+    <p><span class="hero-text-bg"><a href="mailto:uack.uack@gmail.com" class="inline-link">uack.uack@gmail.com</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/simonalex/" target="_blank" rel="noopener" class="inline-link">linkedin</a></span></p>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">CV</span></h2>
+    <div class="download-block">
+      <p><span class="hero-text-bg">Full work history, clients, and metrics.</span></p>
+      <div class="btn-row">
+        <a href="cv.html" target="_blank" rel="noopener" class="download-btn">View CV</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">alex-simon.md</span></h2>
+    <div class="download-block">
+      <p><span class="hero-text-bg">This file is Alex's portfolio in agent form. Drop it into any AI — Claude, ChatGPT, Gemini — press enter, and ask whatever you'd ask in an interview. Every number in it traces to a real project. Every gap is named honestly.</span></p>
+      <ol class="md-steps">
+        <li><span>Download the file below.</span></li>
+        <li><span>Open <strong>Claude</strong>, <strong>ChatGPT</strong>, or <strong>Gemini</strong>. Start a new chat.</span></li>
+        <li><span>Attach the file and press enter. The agent introduces itself.</span></li>
+        <li><span>Ask whatever you need to decide if we should be talking.</span></li>
+      </ol>
+      <div class="btn-row">
+        <a href="alex-simon.md" download class="download-btn">Download alex-simon.md</a>
+        <a href="https://www.linkedin.com/in/simonalex/" target="_blank" rel="noopener" class="download-btn secondary">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<nav class="case-nav">
+</nav>
+
+<footer>
+  <p>Alex Simon · Principal Product Designer</p>
+  <a href="index.html">← All work</a>
+</footer>
+
+<script src="wind.js"></script>
+<script>
+window.initCasePage({
+  wind: {
+    chars:     [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','.', '-', '+', ':'],
+    threshold: 0.18,
+    speed:     0.005
+  }
+});
+</script>
+
+</body>
+</html>

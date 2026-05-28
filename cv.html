@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Alex Simon</title>
+  <style>
+    :root {
+      --bg:    #f5f0e8;
+      --field: #c8bfae;
+      --mid:   #8a8070;
+      --text:  #2a2520;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "SF Mono","Fira Mono","Consolas","Menlo",monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 48px 120px;
+    }
+
+    /* ── Header ── */
+    .cv-header {
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--field);
+      padding-bottom: 32px;
+    }
+
+    .cv-name {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .cv-title {
+      color: var(--mid);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .cv-contact {
+      color: var(--mid);
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 24px;
+    }
+
+    .cv-contact a {
+      color: var(--mid);
+      text-decoration: none;
+    }
+
+    .cv-contact a:hover { color: var(--text); }
+
+    /* ── Sections ── */
+    .cv-section {
+      margin-bottom: 48px;
+    }
+
+    .cv-section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--mid);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--field);
+    }
+
+    /* ── Summary ── */
+    .cv-summary p {
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .cv-summary p:last-child { margin-bottom: 0; }
+
+    /* ── Numbers ── */
+    .cv-numbers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 0;
+    }
+
+    .cv-number-item {
+      padding: 14px 0;
+      border-top: 1px solid var(--field);
+    }
+
+    .cv-number-value {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .cv-number-label {
+      font-size: 11px;
+      color: var(--mid);
+      line-height: 1.4;
+    }
+
+    /* ── Experience ── */
+    .cv-role {
+      margin-bottom: 32px;
+    }
+
+    .cv-role:last-child { margin-bottom: 0; }
+
+    .cv-role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+      gap: 16px;
+    }
+
+    .cv-role-title {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cv-role-period {
+      font-size: 12px;
+      color: var(--mid);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cv-role-company {
+      color: var(--mid);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .cv-role-body {
+      color: var(--text);
+    }
+
+    .cv-role-body li {
+      list-style: none;
+      padding-left: 1.2em;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .cv-role-body li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--mid);
+    }
+
+    /* ── Skills row ── */
+    .cv-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+    }
+
+    .cv-skill {
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .cv-skill-group {
+      color: var(--mid);
+    }
+
+    /* ── Education / meta ── */
+    .cv-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .cv-meta-row:last-child { margin-bottom: 0; }
+
+    .cv-meta-label { color: var(--text); }
+    .cv-meta-value { color: var(--mid); font-size: 12px; text-align: right; }
+
+    /* ── Print ── */
+    @media print {
+      html, body { background: white; color: black; }
+      :root {
+        --bg: white;
+        --field: #ccc;
+        --mid: #666;
+        --text: #111;
+      }
+      .page { padding: 40px 40px 60px; }
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 40px 24px 80px; }
+      .cv-numbers { grid-template-columns: repeat(2, 1fr); }
+      .cv-role-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="cv-header">
+    <p class="cv-name">Alex Simon</p>
+    <p class="cv-title">Designer + Builder · Berlin</p>
+    <div class="cv-contact">
+      <span>uack.uack@gmail.com</span>
+      <a href="https://linkedin.com/in/simonalex">linkedin.com/in/simonalex</a>
+      <a href="index.html">Portfolio</a>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section class="cv-section cv-summary">
+    <p class="cv-section-label">Profile</p>
+    <p>14 years across agency and in-house. Left AKQA to apply agency thinking at product scale — joined Zalando as Principal at The Studio, the in-house innovation lab working on initiatives 2–3 years ahead of the product roadmap.</p>
+    <p>Track record: identifying structural problems no one has formally named, building the business case, and shipping it. At Zalando: €15M GMV from a CRM insight nobody asked for, a co-founder-level vision presentation that changed the product roadmap, first designer to ship a production feature solo. At AKQA: sole UX lead on Ferrari's first connected digital ecosystem.</p>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="cv-section">
+    <p class="cv-section-label">Commercial impact</p>
+    <div class="cv-numbers">
+      <div class="cv-number-item">
+        <span class="cv-number-value">&gt;€15M</span>
+        <span class="cv-number-label">GMV — Notify Me M2, ghost-prevention mechanic</span>
+      </div>
+      <div class="cv-number-item">
+        <span class="cv-number-value">€493M</span>
+        <span class="cv-number-label">Programme scope — CLM, sole CX designer 2.5 years</span>
+      </div>
+      <div class="cv-number-item">
+        <span class="cv-number-value">€7M/yr</span>
+        <span class="cv-number-label">Savings — Enhanced Returns redesign</span>
+      </div>
+      <div class="cv-number-item">
+        <span class="cv-number-value">5.3M</span>
+        <span class="cv-number-label">Users — Project Goldfish CRM experiment, 10 markets</span>
+      </div>
+      <div class="cv-number-item">
+        <span class="cv-number-value">150+</span>
+        <span class="cv-number-label">Designers — AI Enablement programme reach</span>
+      </div>
+      <div class="cv-number-item">
+        <span class="cv-number-value">93</span>
+        <span class="cv-number-label">Active mentorships — tripled from 31 in one cycle</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="cv-section">
+    <p class="cv-section-label">Experience</p>
+
+    <div class="cv-role">
+      <div class="cv-role-header">
+        <span class="cv-role-title">Principal Product Designer — The Studio</span>
+        <span class="cv-role-period">Oct 2024 – present</span>
+      </div>
+      <p class="cv-role-company">Zalando · Berlin</p>
+      <ul class="cv-role-body">
+        <li>Originated and led AI Enablement: org-wide AI adoption for 150+ designers. Diagnosed the gap (90-person survey), designed the Safe Harbor strategy, secured CPO-level backing, ran five simultaneous pairing sessions. First designer to ship a production feature solo — design to live in half a day.</li>
+        <li>Project Occam: self-initiated AI-native discovery vision for Zalando's fragmented search and feed surfaces. Built a functional SwiftUI app with AI, tested with 12 GenZ customers, presented to Co-Founder and SVPs. Vision folded into Next Gen product roadmap.</li>
+        <li>Android Task Force: analysed 5,000 Play Store reviews, connected CX findings to €35.6M/year revenue loss, sourced physical legacy devices when no testing infrastructure existed.</li>
+        <li>Project FEW: self-identified cross-surface incoherence across Save/Follow/Subscribe, designed unified flow, secured sign-off across Feed, Video, and Boards teams for H1 2026.</li>
+      </ul>
+    </div>
+
+    <div class="cv-role">
+      <div class="cv-role-header">
+        <span class="cv-role-title">Senior Product Designer — The Studio</span>
+        <span class="cv-role-period">Apr 2021 – Sep 2024</span>
+      </div>
+      <p class="cv-role-company">Zalando · Berlin</p>
+      <ul class="cv-role-body">
+        <li>Sole CX designer across the CLM programme for 2.5 years — €493M commercial scope, 277M+ restock requests. Identified opportunities, shaped briefs, delivered across multiple workstreams simultaneously.</li>
+        <li>Notify Me M2: self-initiated ghost-prevention mechanic. Named and solved the problem of 45–53% of restock requests going unanswered. &gt;€15M GMV, +8.2% orders, +17.5% YoY reminder creation.</li>
+        <li>Project Goldfish: self-initiated CRM strategy redesign grounded in behavioural science. Three-layer intent model. Live experiment: 5.3M users / 10 markets. Approved by Co-Founder and design leadership.</li>
+        <li>Enhanced Returns: redesigned multi-parcel returns UX. Perfect returns 88% → 91% = €7M annual savings.</li>
+        <li>Zilkroad (Zalando × IDEO × Shenzhen): EU design lead. One month embedded in Shenzhen. Designed core UX architecture, ran structured user experiment (22 participants), evaluated KlingAI vs Style-It for outfit generation.</li>
+        <li>Mentorship Programme Revamp: co-led two iterations. 2025–2026 cycle tripled active mentorships from 31 to 93. Created skills taxonomy, built Notebook LLM for self-service guidance.</li>
+      </ul>
+    </div>
+
+    <div class="cv-role">
+      <div class="cv-role-header">
+        <span class="cv-role-title">Associate Experience Design Director</span>
+        <span class="cv-role-period">May 2019 – Apr 2021</span>
+      </div>
+      <p class="cv-role-company">AKQA · Milan</p>
+      <ul class="cv-role-body">
+        <li>Ferrari Connesso: sole UX lead (team of 8). Ferrari's first UX-led project — full connected ecosystem: app, HMI, web, dealer tools, preowned platform. Prototype and spec delivered on time. Engagement extended to the full digital ecosystem. The Purosangue launched 2022.</li>
+        <li>Miscusi: full digital ecosystem (ordering, loyalty, reservations) under COVID constraints. Embedded in a Miscusi restaurant for a week. Shipped on time.</li>
+        <li>Co-led the Italian experience design team and headed the Business Transformation business unit.</li>
+        <li>Other clients: MaxMara, OVS, Banca IFIS, Technogym, Doha Film Festival, A2A Milano City Dashboard.</li>
+      </ul>
+    </div>
+
+    <div class="cv-role">
+      <div class="cv-role-header">
+        <span class="cv-role-title">Digital Product Design Director</span>
+        <span class="cv-role-period">Jan 2016 – Apr 2019</span>
+      </div>
+      <p class="cv-role-company">HNRG · Padua</p>
+      <ul class="cv-role-body">
+        <li>Led a team of 7–8 designers. Indesit/Hotpoint: 4 brand websites across 4 European markets in 3 months, international team of 7 nationalities.</li>
+        <li>Clients: Dell, Acer, Alienware, Huawei, Uniper, Coop, Sky Italia, Ducati.</li>
+      </ul>
+    </div>
+
+    <div class="cv-role">
+      <div class="cv-role-header">
+        <span class="cv-role-title">Senior UX Designer</span>
+        <span class="cv-role-period">Feb 2014 – Dec 2015</span>
+      </div>
+      <p class="cv-role-company">Swiss Digital Consulting SA · Chiasso</p>
+      <ul class="cv-role-body">
+        <li>Utility sector customer portals: E.ON Benelux, E.ON France, Jade Energia.</li>
+      </ul>
+    </div>
+
+    <div class="cv-role">
+      <div class="cv-role-header">
+        <span class="cv-role-title">UX Designer</span>
+        <span class="cv-role-period">May 2012 – Jan 2014</span>
+      </div>
+      <p class="cv-role-company">Mediana · Padua</p>
+      <ul class="cv-role-body">
+        <li>E.ON Spain, E.ON Italy, Ferroli, Ferplast, Università Cattolica.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="cv-section">
+    <p class="cv-section-label">Strengths</p>
+    <div class="cv-skills">
+      <span class="cv-skill"><span class="cv-skill-group">Design: </span>Problem framing · 0→1 product design · Design systems · AI product design · Prototyping (Figma + code)</span>
+      <span class="cv-skill"><span class="cv-skill-group">Build: </span>React · SwiftUI · Claude Code · Multi-agent workflows · Figma MCP</span>
+      <span class="cv-skill"><span class="cv-skill-group">Leadership: </span>Programme origination · Cross-functional alignment · Exec communication · Mentorship</span>
+    </div>
+  </section>
+
+  <!-- EDUCATION + META -->
+  <section class="cv-section">
+    <p class="cv-section-label">Education &amp; other</p>
+    <div class="cv-meta-row">
+      <span class="cv-meta-label">BA Industrial Design — IUAV Venice</span>
+      <span class="cv-meta-value">2007–2011 · 105/110</span>
+    </div>
+    <div class="cv-meta-row">
+      <span class="cv-meta-label">Languages</span>
+      <span class="cv-meta-value">Italian (native) · English (fluent) · German (working)</span>
+    </div>
+    <div class="cv-meta-row">
+      <span class="cv-meta-label">Speaking</span>
+      <span class="cv-meta-value">PushUX 2026 · Design Matters 2026 · Design Matters 2021</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

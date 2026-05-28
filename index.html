@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Simon — Portfolio</title>
+<link rel="stylesheet" href="system.css">
+<style>
+  /* HOMEPAGE-SPECIFIC — full-screen fixed grid, no scroll */
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* ── GRID ───────────────────────────────────────────────────────── */
+  #grid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    font-family: "SF Mono", "Fira Mono", "Consolas", "Menlo", monospace;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0;
+    color: var(--field);
+    white-space: pre;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ────────────────────────────────────────────────────────── */
+  #nav {
+    position: fixed;
+    bottom: 0;
+    left: 0; right: 0;
+    z-index: 2;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    background: var(--bg);
+    border-top: 1px solid var(--mid);
+    font-family: "SF Mono", "Fira Mono", "Consolas", "Menlo", monospace;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .nav-name {
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .nav-contact {
+    color: var(--mid);
+    white-space: nowrap;
+  }
+
+  .nav-contact a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-contact a:hover { color: var(--text); }
+
+  /* ── PROJECTS ───────────────────────────────────────────────────── */
+  #projects {
+    position: fixed;
+    z-index: 1;
+    left: 0; right: 0;
+    text-align: center;
+    pointer-events: none;
+    font-family: "SF Mono", "Fira Mono", "Consolas", "Menlo", monospace;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    /* top set by layoutNav() */
+  }
+
+  #projects li {
+    display: block;
+    height: 16px;
+    line-height: 16px;
+    list-style: none;
+    text-align: center;
+  }
+
+  #projects a {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    color: var(--text);
+    background: transparent;
+    text-decoration: none;
+    pointer-events: all;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  #projects li:first-child a { font-weight: 600; }
+
+  #projects a:hover { color: var(--mid); }
+  #projects a:hover .meta,
+  #projects a:hover .meta-left { opacity: 1; }
+
+  #projects a .label { display: inline-block; }
+
+  /* per-glyph background on label — outer span is stable hit area */
+  #projects a .label > span {
+    background: var(--bg);
+    display: inline;
+  }
+
+  /* inner display span mutates text — no pointer events, no background */
+  #projects a .label > span > .display {
+    pointer-events: none;
+  }
+
+  #projects a .meta,
+  #projects a .meta-left {
+    position: absolute;
+    top: 0;
+    color: var(--mid);
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+
+  /* per-glyph background on meta — scramble splits into spans */
+  #projects a .meta span,
+  #projects a .meta-left span {
+    background: var(--bg);
+    display: inline;
+    pointer-events: none;
+  }
+
+  #projects a .meta { left: calc(100% + 1ch); }
+  #projects a .meta-left { right: calc(100% + 1ch); }
+
+  #projects a:hover .meta,
+  #projects a:hover .meta-left { opacity: 1; }
+</style>
+</head>
+<body>
+
+<pre id="grid" aria-hidden="true" role="presentation"></pre>
+
+<div id="nav">
+  <span class="nav-name scramble">Alex Simon</span>
+  <span class="nav-contact">
+    <a href="mailto:uack.uack@gmail.com" class="scramble">uack.uack@gmail.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/simonalex/" target="_blank" rel="noopener" class="scramble">linkedin</a>
+  </span>
+</div>
+
+<ul id="projects">
+  <li><a href="alex-simon.html"><span class="meta-left">Designer + builder ·</span><span class="label">alex-simon.md</span><span class="meta">· Agent · Portfolio</span></a></li>
+  <li><a href="ai-enablement.html"><span class="meta-left">Zalando · 2026 ·</span><span class="label">ai-enablement.case</span><span class="meta">· AI · Community · Scaling</span></a></li>
+  <li><a href="occam.html"><span class="meta-left">Zalando · 2025 ·</span><span class="label">occam.case</span><span class="meta">· Vision · AI patterns</span></a></li>
+  <li><a href="zilkroad.html"><span class="meta-left">Zalando · 2025 ·</span><span class="label">zilkroad.case</span><span class="meta">· Cross-continent · Social commerce</span></a></li>
+  <li><a href="clm.html"><span class="meta-left">Zalando · 2024–2025 ·</span><span class="label">customer-lifecycle.case</span><span class="meta">· GMV impact · CRM</span></a></li>
+  <li><a href="ferrari.html"><span class="meta-left">Ferrari · 2020 ·</span><span class="label">ferrari-connesso.case</span><span class="meta">· Connectivity · Service design</span></a></li>
+</ul>
+
+<script src="password.js"></script>
+<script src="wind.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // ── CHAR SET (aino's, light → dense) ──────────────────────────────
+  const CHARS = [' ',' ',' ',' ',' ',' ',' ',' ','.','.',':','-','~','+','|','/'];
+
+  // ── STATE ─────────────────────────────────────────────────────────
+  const gridEl     = document.getElementById('grid');
+  const navEl      = document.getElementById('nav');
+  const projectsEl = document.getElementById('projects');
+  const navName    = navEl.querySelector('.nav-name');
+  const navContact = navEl.querySelector('.nav-contact');
+
+  const CELL = 16;
+  let charW = 7.83;
+  let COLS = 0, ROWS = 0;
+  let t = 0;
+  let lastFrame = null;
+  let accumulator = 0;
+  const STEP_MS = 1000 / 30;
+  const DT = 0.01;
+
+  // ── MEASURE ───────────────────────────────────────────────────────
+  function measureGrid() {
+    const probe = document.createElement('span');
+    probe.style.cssText = 'position:absolute;visibility:hidden;white-space:pre;font-family:"SF Mono","Fira Mono","Consolas","Menlo",monospace;font-size:13px;line-height:16px;letter-spacing:0;';
+    probe.textContent = 'M'.repeat(10);
+    document.body.appendChild(probe);
+    charW = probe.getBoundingClientRect().width / 10;
+    document.body.removeChild(probe);
+    COLS = Math.floor(window.innerWidth  / charW);
+    ROWS = Math.floor(window.innerHeight / CELL);
+    return { charW, COLS, ROWS };
+  }
+
+  // ── LAYOUT PROJECTS ───────────────────────────────────────────────
+  // Nav is CSS-positioned (position:fixed; bottom:0) — no JS needed.
+  function layoutNav() {
+    // Projects: centered at 45% height (slightly above center)
+    const listH = 5 * CELL;
+    const rawTop = window.innerHeight * 0.45 - listH / 2;
+    const snappedTop = Math.round(rawTop / CELL) * CELL;
+    projectsEl.style.top = snappedTop + 'px';
+
+    // The container uses text-align:center — CSS centers the <a> by pixel width.
+    // The grid center col is Math.floor(COLS/2), at pixel Math.floor(COLS/2)*charW.
+    // We nudge the container so the pixel center of the viewport aligns to that col.
+    const gridCenterPx = Math.floor(COLS / 2) * charW;
+    const viewportCenterPx = window.innerWidth / 2;
+    const nudge = gridCenterPx - viewportCenterPx;
+    projectsEl.style.marginLeft = nudge + 'px';
+    projectsEl.style.marginRight = (-nudge) + 'px';
+  }
+
+  // ── WIND RENDERER ─────────────────────────────────────────────────
+  function renderWind(time, COLS, ROWS) {
+    // Slowly drifting wind angle driven by two overlapping sine waves
+    const windAngle = Math.sin(time * 0.15) * 1.5 + Math.cos(time * 0.11) * 1.5;
+
+    // Three layers with slight rotational offsets for depth
+    const dx1 = Math.cos(windAngle),       dy1 = Math.sin(windAngle);
+    const dx2 = Math.cos(windAngle + 0.8), dy2 = Math.sin(windAngle + 0.8);
+    const dx3 = Math.cos(windAngle - 0.5), dy3 = Math.sin(windAngle - 0.5);
+
+    const last = CHARS.length - 1;
+    const THRESHOLD = 0.34;
+    const rows = new Array(ROWS);
+
+    for (let y = 0; y < ROWS; y++) {
+      let rowStr = '';
+      for (let x = 0; x < COLS; x++) {
+        // Three overlapping sine waves driven by directional vectors + time
+        const w1 = Math.sin(x * dx1 * 0.05 + y * dy1 * 0.08 + time * 1.1);
+        const w2 = Math.sin(x * dx2 * 0.04 + y * dy2 * 0.06 + time * 0.7);
+        const w3 = Math.sin(x * dx3 * 0.03 + y * dy3 * 0.05 + time * 0.9);
+
+        // Sum and normalise to [0, 1]
+        const raw = (w1 + w2 + w3) / 3; // range ~[-1, 1]
+        const v = (raw + 1) * 0.5;       // range [0, 1]
+
+        if (v < THRESHOLD) {
+          rowStr += ' ';
+        } else {
+          // Map the remainder [THRESHOLD, 1] proportionally onto CHARS
+          const mapped = (v - THRESHOLD) / (1 - THRESHOLD);
+          rowStr += CHARS[Math.min(last, Math.floor(mapped * (last + 1)))];
+        }
+      }
+      rows[y] = rowStr;
+    }
+    return rows;
+  }
+
+  // ── RENDER ────────────────────────────────────────────────────────
+  function render() {
+    const wind = renderWind(t, COLS, ROWS);
+    const blank = ' '.repeat(COLS);
+    const lines = new Array(ROWS);
+    for (let i = 0; i < ROWS; i++) {
+      const r = wind[i];
+      if (!r) { lines[i] = blank; continue; }
+      lines[i] = r.length < COLS ? r.padEnd(COLS, ' ') : r.slice(0, COLS);
+    }
+    gridEl.textContent = lines.join('\n');
+  }
+
+  // ── LOOP ──────────────────────────────────────────────────────────
+  function loop(now) {
+    requestAnimationFrame(loop);
+    if (lastFrame === null) { lastFrame = now; return; }
+    const elapsed = Math.min(now - lastFrame, 100);
+    lastFrame = now;
+    accumulator += elapsed;
+    let ticked = false;
+    while (accumulator >= STEP_MS) {
+      t += DT;
+      accumulator -= STEP_MS;
+      ticked = true;
+    }
+    if (ticked) render();
+  }
+
+  // ── RESIZE ────────────────────────────────────────────────────────
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      measureGrid();
+      layoutNav();
+    }, 150);
+  });
+
+  // ── PROJECT LINK SCRAMBLE ─────────────────────────────────────────
+  // Uses .display inner span so the outer span[data-char] stays as the
+  // stable DOM hit area — required so clicks work during scramble animation.
+  const SCRAMBLE_CHARS = '·-:/+=<>!?3I549680ON';
+
+  function triggerScramble(span, isNeighbor) {
+    const display = span.querySelector('.display');
+    if (!display) return;
+    if (span._si) { clearInterval(span._si); span._si = null; display.textContent = span.dataset.char; }
+    const orig = span.dataset.char;
+    const total = isNeighbor ? 10 + Math.floor(Math.random() * 6) : 25 + Math.floor(Math.random() * 11);
+    let frames = 0;
+    span._si = setInterval(() => {
+      display.textContent = SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+      if (++frames >= total) { clearInterval(span._si); span._si = null; display.textContent = orig; }
+    }, 30);
+  }
+
+  function scrambleProjectSpan(el) {
+    if (el.querySelector('span[data-char]')) return;
+    const original = el.textContent;
+    el.textContent = '';
+    const frag = document.createDocumentFragment();
+    const spans = original.split('').map(ch => {
+      const outer = document.createElement('span');
+      outer.dataset.char = ch;
+      const display = document.createElement('span');
+      display.className = 'display';
+      display.textContent = ch;
+      outer.appendChild(display);
+      frag.appendChild(outer);
+      return outer;
+    });
+    el.appendChild(frag);
+    spans.forEach((span, idx) => {
+      span.addEventListener('mouseenter', () => {
+        triggerScramble(span, false);
+        if (idx > 0) triggerScramble(spans[idx - 1], true);
+        if (idx < spans.length - 1) triggerScramble(spans[idx + 1], true);
+      });
+    });
+  }
+
+  function initProjectScramble() {
+    document.querySelectorAll('#projects a .label, #projects a .meta, #projects a .meta-left').forEach(scrambleProjectSpan);
+  }
+
+  // ── INIT ──────────────────────────────────────────────────────────
+  async function init() {
+    await document.fonts.ready;
+    await new Promise(r => requestAnimationFrame(r));
+    measureGrid();
+    layoutNav();
+    window.initScramble(document.body);  // nav-name + nav-contact links
+    initProjectScramble();               // project link labels/meta (.display pattern)
+    render();
+    requestAnimationFrame(loop);
+  }
+
+  init();
+
+})();
+</script>
+</body>
+</html>
