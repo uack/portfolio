@@ -6,3 +6,5 @@ reference-current.png
 spacing-*.png
 wind-variants.js
 .npmrc
+.gstack/
+.vercel

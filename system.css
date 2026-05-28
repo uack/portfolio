@@ -476,12 +476,23 @@ blockquote p {
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────── */
+/* ── FULL-SECTION INNER WRAPPER ──────────────────────────────────── */
+.full-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
+  .hero { padding-top: 48px; }
   section:not(.full):not(.wide) { padding-left: 24px; padding-right: 24px; }
   .stat-row { grid-template-columns: 1fr; }
   .workstream-grid { grid-template-columns: 1fr; }
   .two-col { grid-template-columns: 1fr; gap: 32px; }
   footer { padding: 0 16px; }
+  .full-inner { padding: 0 24px; }
+  .full-inner.gif-grid { grid-template-columns: 1fr !important; }
 }
 
 /* ── PASSWORD OVERLAY ────────────────────────────────────────────── */

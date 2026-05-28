@@ -238,13 +238,14 @@
       });
 
       var viewW = window.innerWidth;
-      var snappedLeft = Math.round(((viewW - 720) / 2) / charW) * charW;
-      var snappedPad  = Math.round(48 / charW) * charW;
+      var isMobile = viewW <= 768;
+      var snappedLeft = isMobile ? 0 : Math.round(((viewW - 720) / 2) / charW) * charW;
+      var snappedPad  = isMobile ? 24 : Math.round(48 / charW) * charW;
 
       document.documentElement.style.setProperty('--snap-pad', snappedPad + 'px');
 
       document.querySelectorAll('section:not(.full):not(.wide)').forEach(function (el) {
-        el.style.marginLeft  = snappedLeft + 'px';
+        el.style.marginLeft  = isMobile ? 'auto' : snappedLeft + 'px';
         el.style.marginRight = 'auto';
         el.style.paddingLeft  = snappedPad + 'px';
         el.style.paddingRight = snappedPad + 'px';
@@ -252,7 +253,7 @@
 
       var heroInner = document.querySelector('.hero-inner');
       if (heroInner) {
-        heroInner.style.marginLeft  = snappedLeft + 'px';
+        heroInner.style.marginLeft  = isMobile ? 'auto' : snappedLeft + 'px';
         heroInner.style.marginRight = 'auto';
       }
 

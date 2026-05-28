@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alex Simon — Portfolio</title>
 <link rel="stylesheet" href="system.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
   /* HOMEPAGE-SPECIFIC — full-screen fixed grid, no scroll */
   html, body {
@@ -144,6 +145,24 @@
 
   #projects a:hover .meta,
   #projects a:hover .meta-left { opacity: 1; }
+
+  @media (max-width: 768px) {
+    #nav { padding: 0 16px; }
+    #nav .nav-contact { display: none; }
+
+    #projects li {
+      height: 32px;
+      line-height: 32px;
+    }
+
+    #projects a {
+      height: 32px;
+      line-height: 32px;
+    }
+
+    #projects a .meta,
+    #projects a .meta-left { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -216,13 +235,17 @@
     projectsEl.style.top = snappedTop + 'px';
 
     // The container uses text-align:center — CSS centers the <a> by pixel width.
-    // The grid center col is Math.floor(COLS/2), at pixel Math.floor(COLS/2)*charW.
-    // We nudge the container so the pixel center of the viewport aligns to that col.
-    const gridCenterPx = Math.floor(COLS / 2) * charW;
-    const viewportCenterPx = window.innerWidth / 2;
-    const nudge = gridCenterPx - viewportCenterPx;
-    projectsEl.style.marginLeft = nudge + 'px';
-    projectsEl.style.marginRight = (-nudge) + 'px';
+    // On mobile skip the nudge — touch screens don't need monospace grid alignment.
+    if (window.innerWidth > 768) {
+      const gridCenterPx = Math.floor(COLS / 2) * charW;
+      const viewportCenterPx = window.innerWidth / 2;
+      const nudge = gridCenterPx - viewportCenterPx;
+      projectsEl.style.marginLeft = nudge + 'px';
+      projectsEl.style.marginRight = (-nudge) + 'px';
+    } else {
+      projectsEl.style.marginLeft = '0';
+      projectsEl.style.marginRight = '0';
+    }
   }
 
   // ── WIND RENDERER ─────────────────────────────────────────────────
