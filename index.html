@@ -8,9 +8,16 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
   /* HOMEPAGE-SPECIFIC — full-screen fixed grid, no scroll */
-  html, body {
+  html {
     height: 100%;
     overflow: hidden;
+  }
+  body {
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    touch-action: none;
   }
 
   /* ── GRID ───────────────────────────────────────────────────────── */
@@ -150,6 +157,11 @@
     #nav { padding: 0 16px; }
     #nav .nav-contact { display: none; }
 
+    #projects {
+      overflow: hidden;
+      max-height: calc(100vh - 64px);
+    }
+
     #projects li {
       height: 32px;
       line-height: 32px;
@@ -229,9 +241,14 @@
   // Nav is CSS-positioned (position:fixed; bottom:0) — no JS needed.
   function layoutNav() {
     // Projects: centered at 45% height (slightly above center)
-    const listH = 5 * CELL;
-    const rawTop = window.innerHeight * 0.45 - listH / 2;
-    const snappedTop = Math.round(rawTop / CELL) * CELL;
+    const isMobile = window.innerWidth <= 768;
+    const itemH = isMobile ? 32 : CELL;
+    const itemCount = projectsEl.querySelectorAll('li').length;
+    const listH = itemCount * itemH;
+    const navH = 32;
+    const availH = window.innerHeight - navH;
+    const rawTop = Math.min(availH * 0.45 - listH / 2, availH - listH - 16);
+    const snappedTop = Math.max(16, Math.round(rawTop / itemH) * itemH);
     projectsEl.style.top = snappedTop + 'px';
 
     // The container uses text-align:center — CSS centers the <a> by pixel width.
