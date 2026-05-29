@@ -121,7 +121,7 @@ section.full {
 /* ── HERO (case pages) ───────────────────────────────────────────── */
 .hero {
   width: 100%;
-  padding-top: 80px;
+  padding-top: 112px;
   padding-bottom: 52px;
 }
 
@@ -221,6 +221,29 @@ section.full {
   z-index: 1;
   padding: 0 0 80px;
   background: transparent;
+}
+
+/* ── TOP NAV ─────────────────────────────────────────────────────── */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: var(--bg);
+  border-bottom: 1px solid var(--mid);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  font-size: 13px;
+}
+
+.top-nav a { color: var(--mid); text-decoration: none; }
+.top-nav a:hover { color: var(--text); }
+
+@media (max-width: 768px) {
+  .top-nav { padding: 0 16px; }
 }
 
 /* ── FOOTER ──────────────────────────────────────────────────────── */
@@ -485,7 +508,7 @@ blockquote p {
 }
 
 @media (max-width: 768px) {
-  .hero { padding-top: 48px; }
+  .hero { padding-top: 80px; }
   section:not(.full):not(.wide) { padding-left: 24px; padding-right: 24px; }
   .stat-row { grid-template-columns: 1fr; }
   .workstream-grid { grid-template-columns: 1fr; }
