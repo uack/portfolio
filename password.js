@@ -1,5 +1,5 @@
 (function () {
-  var PASSWORDS = ['akqa', 'doctolib', 'deathtozalando'];
+  var PASSWORDS = ['akqa', 'doctolib', 'deathtozalando', 'google', 'anthropic', 'figma', 'intercom', 'lovable', 'bendingspoons', 'kraken', 'fin', 'n8n', 'perplexity', 'shopify', 'stripe', 'linear'];
   var KEY = 'portfolio-auth';
 
   if (sessionStorage.getItem(KEY) === '1') return;
@@ -11,6 +11,7 @@
       '<p id="pw-label">Enter password</p>' +
       '<input id="pw-input" type="password" autocomplete="off" spellcheck="false" autofocus>' +
       '<p id="pw-error" aria-live="polite"></p>' +
+      '<a id="pw-contact" href="mailto:uack.uack@gmail.com">no password? get in touch</a>' +
     '</div>';
   document.body.appendChild(overlay);
 
