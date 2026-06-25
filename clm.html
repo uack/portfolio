@@ -14,7 +14,7 @@
     .full-image {
       max-width: 720px;
       margin: 0 auto;
-      padding: 0 48px;
+      padding: 0 24px;
       box-sizing: border-box;
     }
 
@@ -39,75 +39,58 @@
 
   <div class="hero">
     <div class="hero-inner">
-      <p class="hero-label"><span class="hero-text-bg">Zalando · 2022–2025</span></p>
+      <p class="hero-label"><span class="hero-text-bg">Zalando · Oct 2023–Mar 2026</span></p>
       <h1><span class="hero-text-bg scramble">Customer Lifecycle Management</span></h1>
-      <p class="lead"><span class="hero-text-bg">CRM at Zalando had always been a commercial topic. Product, marketing, business development, each optimising their own number. I was the first designer to sit inside the programme. The business metrics were hiding a category nobody had been tracking: the customers Zalando was failing silently.</span></p>
+      <p class="lead"><span class="hero-text-bg">Zalando ran customer messaging through several internal teams. Each owned a slice of the experience and answered to its own metric. No one owned it end to end. The business metrics were hiding a category nobody had been tracking: the customers Zalando was failing silently.</span></p>
 
-      <div class="hero-meta">
+      <div class="hero-meta" style="display:grid;grid-template-columns:3fr 1fr;row-gap:24px;column-gap:0;">
         <div class="hero-meta-item">
           <span class="hero-meta-label"><span class="hero-text-bg">Role</span></span>
-          <span class="hero-meta-value"><span class="hero-text-bg">Initiative Product Design Lead</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">Principal Product Designer</span></span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label"><span class="hero-text-bg">Duration</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">2.5 years</span></span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label"><span class="hero-text-bg">Team</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">One BD partner (core) · Engineers, researchers, PMs, data scientists, market PMs, marketers, legal, CRM (SMEs per workstream) · GMs and VPs directly</span></span>
         </div>
         <div class="hero-meta-item">
           <span class="hero-meta-label"><span class="hero-text-bg">Type of work</span></span>
-          <span class="hero-meta-value"><span class="hero-text-bg">Product definition · Systems · CRM logic</span></span>
+          <span class="hero-meta-value"><span class="hero-text-bg">Product definition · CRM logic · 0→1</span></span>
         </div>
       </div>
     </div>
   </div>
 
   <section class="full">
-    <div class="full-image">
-      <img src="clm-ambition.png" alt="CLM — user intent over time: not every action results in a purchase, but leads to another interaction">
+    <div class="full-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-left:24px;padding-right:24px;">
+      <img src="clm-onboarding.png" alt="CLM — onboarding: style, made simple" style="width:100%;display:block;">
+      <img src="clm-interests.png" alt="CLM — interest collection: brands and topics" style="width:100%;display:block;">
     </div>
   </section>
 
   <section>
-    <h2><span class="hero-text-bg scramble">The problem</span></h2>
-    <h3><span class="hero-text-bg scramble">Six functions, one customer, no shared direction</span></h3>
-    <p><span class="hero-text-bg">CRM at Zalando touched hundreds of millions of customer interactions a year: 277M restock requests, 6M daily cart visits, push and email across dozens of markets. Six functions owned a slice of it: Product, Engineering, Business Development, Marketing, Data Science, Legal, each measured by their own metric. Nobody held the full picture of what the experience felt like end to end.</span></p>
-    <p><span class="hero-text-bg">The brief was to increase CLV. No workstreams defined, no scope, no features. I was the only designer on the programme for two and a half years. Working with a business developer who owned forecasts and commercial logic, I identified what to build, shaped each brief, and delivered it. Notify Me, Communication Preferences, I&amp;E Notifications: a few of the workstreams we proposed and shipped.</span></p>
+    <h2><span class="hero-text-bg scramble">Context</span></h2>
+    <h3><span class="hero-text-bg scramble">Multiple teams, one customer, no shared direction</span></h3>
+    <p><span class="hero-text-bg">Zalando ran customer messaging through several internal teams. Each team owned a slice of the experience, and each answered to its own metric. No one owned the experience end to end. Customers drove the volume here: 277M restock requests a year, 6M cart visits a day, and messaging that reached them by push and email across dozens of markets.</span></p>
+    <p><span class="hero-text-bg">Leadership asked for one thing, higher customer lifetime value (CLV), and defined nothing else. They handed me no workstreams, no features, and no scope. I was the only designer on the programme for two and a half years. A business developer worked with me on forecasts and commercial logic, and I pulled in other practices, data, marketing, and legal, as subject matter experts per stream. I decided what to build, wrote each brief, and shipped it.</span></p>
+    <p><span class="hero-text-bg">I ran several streams. With restock alerts, customers could ask to be told when an out-of-stock item returned. With communication preferences, they got one in-app surface to control every off-platform message, with email and push permissions aligned across Android and iOS. With interest collection, they told me what they cared about, and I fed that into recommendations. This case covers two streams in depth: restock alerts, and the requests that went unanswered.</span></p>
   </section>
 
   <section>
-    <h2><span class="hero-text-bg scramble">The work</span></h2>
-    <h3><span class="hero-text-bg scramble">Notify Me, then the harder question</span></h3>
-    <p><span class="hero-text-bg">Notify Me was the first feature giving customers direct control at the item level: alerts when an out-of-stock item becomes available. Push was already a fragile channel, opt-out rates rising, and the customers most resistant to marketing were exactly the audience this feature needed to reach.</span></p>
-    <p><span class="hero-text-bg">Three hard constraints: inconsistent legacy UX across devices, misaligned incentives across Business Development, Markets, and CRM, and a strict technical integration with Braze. I co-owned the product definition with a business developer and built the mockups that forced a decision. The PRFAQ was signed off in one review round. First experiment live December 2024. Reminder creation rate up 17.5%.</span></p>
-    <p><span class="hero-text-bg">With M1 proven, M2 asked a harder question: what happened to the customers whose items never came back in stock?</span></p>
+    <h2><span class="hero-text-bg scramble">What customers ran into</span></h2>
+    <h3><span class="hero-text-bg scramble">A promise that expired in silence</span></h3>
+    <p><span class="hero-text-bg">I ran qualitative and quantitative research, read App Store reviews, and worked through the behavioural data. I found the same problem in all three. Customers set a restock alert and waited. Often they heard nothing, because the item never returned or the system failed to send. The customer who wanted the item got no word either way, and the next alert they set carried less weight. Customers whose first alert failed stopped relying on the next one.</span></p>
   </section>
 
   <section>
-    <h2><span class="hero-text-bg scramble">Ghosting</span></h2>
-    <h3><span class="hero-text-bg scramble">45–53% of requests, no reply</span></h3>
-    <p><span class="hero-text-bg">45 to 53% of restock requests went unanswered for 14 to 90 days. 15% of items were ever restocked at all. These were customers who had raised their hand. Zalando said nothing back. I named it ghosting and designed the response. The idea was straightforward: when an item couldn't be restocked, suggest alternatives. The design problem was the logic inside it. Which signals indicate the customer still cares? When is the right moment to send? Which products qualify: not just similar items, but the right size, added to the site after the customer set the alert, matching the original intent rather than filling a slot. The logic of what to send, when, and why was mine.</span></p>
-    <p><span class="hero-text-bg">Alongside it: tiered notification logic that prioritised Plus Superstars and CLM segments (0 to 1st order, 1st to 2nd order), so the highest-value customers got notified first on limited restocks.</span></p>
-  </section>
-
-  <section>
-    <h2><span class="hero-text-bg scramble">The result</span></h2>
-    <h3><span class="hero-text-bg scramble">A thesis proven in revenue</span></h3>
-    <p><span class="hero-text-bg">Two years of data confirmed it. Relevant messages outperform volume on orders, on revenue, on retention. The customers Zalando had been failing silently were now being answered, and converting. I took that finding to the CRM director. That became Project Goldfish: a new CRM strategy in development, designed to reach 5.3M users across 10 markets.</span></p>
-    <p><span class="hero-text-bg">Notify Me and Ghost-prevention are two workstreams from a programme that ran across many more. Interest Collection, which asked customers what they cared about and surfaced related collections, drove engagement gains with the same logic.</span></p>
-
-    <div class="callout">
-      <p><span class="hero-text-bg">Total programme impact: &gt;€15M GMV. Notify Me M2 alone grew revenue +€9.9M year on year. Ghost-prevention recovered €3.7M from previously silent requests.</span></p>
-    </div>
-
-    <div class="stat-row">
-      <div class="stat">
-        <span class="stat-number">&gt;€15M</span>
-        <span class="stat-label">GMV — total programme impact</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">277M · +17.5%</span>
-        <span class="stat-label">Restock requests · reminder creation rate</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">+8.2%</span>
-        <span class="stat-label">Orders — Notify Me M2</span>
-      </div>
-    </div>
+    <h2><span class="hero-text-bg scramble">Restock alerts</span></h2>
+    <h3><span class="hero-text-bg scramble">The first feature customers could actually trust</span></h3>
+    <p><span class="hero-text-bg">I shipped restock alerts as the first feature to give customers control at the item level. A customer could ask to be told, by email or push, when an out-of-stock item came back. I built it to behave the same way across devices and across both channels, which the legacy experience did not.</span></p>
+    <p><span class="hero-text-bg">I worked against three constraints. Customers met an inconsistent legacy experience from one device to the next. Business development, the markets, and the customer relationship management (CRM) team each pulled in a different direction. And I had to fit the build to a strict integration with Braze, a third-party messaging platform.</span></p>
+    <p><span class="hero-text-bg">Customers were already opting out of push at rising rates, which made it the weak point, and the people most resistant to marketing were the ones this feature most needed to reach. I co-owned the product definition with the business developer and built the mockups that put the trade-offs in front of everyone. I cleared the brief in a single review round. We shipped the first milestone in August 2024, and customers set restock alerts at a rate 16% higher than before.</span></p>
   </section>
 
   <section class="full">
@@ -116,13 +99,58 @@
     </div>
   </section>
 
+  <section>
+    <h2><span class="hero-text-bg scramble">Unanswered requests</span></h2>
+    <h3><span class="hero-text-bg scramble">56% of requests, no reply</span></h3>
+    <p><span class="hero-text-bg">With the baseline live, I went back to the customers whose items never came back. I pulled two numbers. Of the 277M restock requests, customers got no reply to 56%. And Zalando only ever restocked about half of the items they asked for. These were people who had asked, explicitly, to hear back, and they got nothing: no confirmation the item was gone, no alternative, no signal at all.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">Alternatives and tiering</span></h2>
+    <h3><span class="hero-text-bg scramble">Turning a dead end into a discovery</span></h3>
+    <p><span class="hero-text-bg">I already knew from research and reviews what customers ran into. For the fix, I went to the data. I designed the second milestone around one move: when Zalando could not restock an item, I sent the customer an alternative before the alert expired. Similar products were not enough, so I sent new stock the customer had not seen, added to the catalogue after they set the alert, in the right size, matched to the original search. The logic underneath was the harder problem, and I owned it: which signals showed a customer still cared, which products qualified, when to send. I made those calls from the data, not from instinct.</span></p>
+    <p><span class="hero-text-bg">I also built tiered notification logic. Zalando's highest-value subscribers received a limited set of restock alerts first. We shipped the second milestone in June 2025.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="hero-text-bg scramble">Outcomes</span></h2>
+    <h3><span class="hero-text-bg scramble">A thesis confirmed in revenue</span></h3>
+    <p><span class="hero-text-bg">I saw one result hold across the programme. Customers responded to messages that matched what they wanted, not to messages that just cleared inventory. We saw orders, revenue, and retention rise with relevance. The customers who had been hearing nothing began to convert. I took that finding to the CRM director, and it became a new CRM strategy, run internally as Project Goldfish, that reached 5.3M users across 10 markets.</span></p>
+    <p><span class="hero-text-bg">I ran more streams than these two. I built interest collection on the same finding: I asked customers what they cared about, which sports they followed for example, and used their answers to shape the feed and the recommendations they saw.</span></p>
+
+    <div class="callout">
+      <p><span class="hero-text-bg">We delivered more than €15M in gross merchandise value (GMV) across the programme. With the second milestone of restock alerts, we grew GMV by 17.5% year on year, an increase of €9.9M. We recovered €3.7M of that through the alternatives logic alone, from requests that had previously gone unanswered.</span></p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-number">&gt;€15M</span>
+        <span class="stat-label">GMV — total programme impact</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">277M · +16%</span>
+        <span class="stat-label">Restock requests · reminder creation rate</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">+8.2%</span>
+        <span class="stat-label">Orders — restock alerts second milestone</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="full">
+    <div class="full-image">
+      <img src="clm-ambition.png" alt="CLM — user intent over time: not every action results in a purchase, but leads to another interaction">
+    </div>
+  </section>
+
 </div>
 
 <nav class="case-nav-boxes">
-  <a href="occam.html" class="case-nav-box">
+  <a href="ferrari.html" class="case-nav-box">
     <span class="case-nav-box-label">Next case</span>
-    <span class="case-nav-box-title">Occam →</span>
-    <span class="case-nav-box-desc">Five teams, no shared vision, one designer who decided to fix it.</span>
+    <span class="case-nav-box-title">Ferrari Connesso →</span>
+    <span class="case-nav-box-desc">83 features written by engineers. No UX process, no trust. Starting from zero.</span>
   </a>
   <a href="alex-simon.html" class="case-nav-box">
     <span class="case-nav-box-label">Go deeper</span>
